@@ -14,6 +14,8 @@ createApp({
     },
     methods: {
         readList() {
+            console.log("read List function")
+
             axios.get(this.apiUrl)
                 .then((response) => {
 
@@ -26,7 +28,6 @@ createApp({
                 .finally(() => {
 
                 });
-            console.log(readList)
         },
         // removeTask(index) {
         //     this.tasks.splice(index, 1)
@@ -48,6 +49,7 @@ createApp({
     },
     mounted() {
         this.readList();
+        console.log("mounted")
     }
 }).mount('#app');
 
