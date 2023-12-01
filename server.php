@@ -2,7 +2,7 @@
 //1 leggo il file json, aggiungo variabile
 $filecontent = file_get_contents("todo.json");
 
-var_dump($filecontent);
+// var_dump($filecontent);
 
 //2 decodifico 
 

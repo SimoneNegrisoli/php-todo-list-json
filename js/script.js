@@ -13,23 +13,40 @@ createApp({
         }
     },
     methods: {
-        removeTask(index) {
-            this.tasks.splice(index, 1)
-        },
-        addNewTask(index) {
-            const data = new FormData()
-            data.append('task', this.addTask)
-
-            axios.post(this.apiUrl, data)
+        readList() {
+            axios.get(this.apiUrl)
                 .then((response) => {
-                    console.log(response.data);
-                    this.todoList = response.data;
+
+                    console.log(response);
+                    //this.todoList = response.data;
                 })
                 .catch((error) => {
                     console.log(error);
-                });
-        }
+                })
+                .finally(() => {
 
+                });
+        },
+        // removeTask(index) {
+        //     this.tasks.splice(index, 1)
+        // },
+        // addNewTask(index) {
+        //     const data = new FormData()
+        //     data.append('task', this.addTask)
+
+        //     axios.post(this.apiUrl, data)
+        //         .then((response) => {
+        //             console.log(response.data);
+        //             this.todoList = response.data;
+        //         })
+        //         .catch((error) => {
+        //             console.log(error);
+        //         });
+        // }
+
+    },
+    mounted() {
+        this.readList();
     }
 }).mount('#app');
 
