@@ -20,13 +20,12 @@
             <header class="text-center">
                 <h1>To do list </h1>
                 <div class="form-inline">
-                    <input type="text" class="border rounded-2 mx-4" v-model="addNewTask"
-                        @keyup.enter="addNewTask(index)">
-                    <button class="btn btn-primary mb-2" @click="addNewTask(index)()">Aggiungi</button>
+                    <input type="text" class="border rounded-2 mx-4">
+                    <button class="btn btn-primary mb-2" @click="">Aggiungi</button>
                 </div>
             </header>
             <main>
-                <ul class="list-group" v-if="tasks.length > 0">
+                <ul class="list-group" v-if="todoList.length > 0">
                     <li class="list-group-item d-flex justify-content-between bg-body-secondary m-1 rounded-2"
                         v-for="(task,index) in todoList" :key="index" @click="task.done =!task.done">
                         <span :class="{'done' : task.done}">{{task}}</span>

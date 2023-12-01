@@ -14,13 +14,12 @@ createApp({
     },
     methods: {
         readList() {
-            console.log("read List function")
 
             axios.get(this.apiUrl)
                 .then((response) => {
 
-                    console.log(response);
-                    //this.todoList = response.data;
+                    console.log(response.data);
+                    this.todoList = response.data;
                 })
                 .catch((error) => {
                     console.log(error);
@@ -49,7 +48,6 @@ createApp({
     },
     mounted() {
         this.readList();
-        console.log("mounted")
     }
 }).mount('#app');
 
