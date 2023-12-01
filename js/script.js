@@ -26,6 +26,7 @@ createApp({
                 .finally(() => {
 
                 });
+            console.log(readList)
         },
         // removeTask(index) {
         //     this.tasks.splice(index, 1)
