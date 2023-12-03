@@ -45,6 +45,19 @@ createApp({
                 .catch((error) => {
                     console.log(error);
                 });
+        },
+        removeTask(index) {
+            const dataTask = new FormData();
+            dataTask.append("removeTask", index);
+
+            axios.post(this.apiUrl, dataTask)
+                .then((response) => {
+                    console.log(response.data);
+                    this.todoList = response.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
 
 

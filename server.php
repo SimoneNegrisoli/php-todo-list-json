@@ -22,6 +22,12 @@ if (isset($_POST['text'])) {
     file_put_contents('todo.json', json_encode($list));
 }
 
+if (isset($_POST['removeTask'])) {
+    $index = $_POST['removeTask'];
+    array_splice($list, $index, 1);
+    file_put_contents('todo.json', json_encode($list));
+}
+
 // 3
 
 header('Content-Type: application/json');
