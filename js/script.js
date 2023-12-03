@@ -45,6 +45,8 @@ createApp({
                 .catch((error) => {
                     console.log(error);
                 });
+
+            this.newTask = '';
         },
         removeTask(index) {
             const dataTask = new FormData();
