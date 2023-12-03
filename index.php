@@ -20,21 +20,21 @@
             <header class="text-center">
                 <h1>To do list </h1>
                 <div class="form-inline">
-                    <input type="text" class="border rounded-2 mx-4">
-                    <button class="btn btn-primary mb-2" @click="">Aggiungi</button>
+                    <input type="text" class="border rounded-2 mx-4" v-model="newTask">
+                    <button class="btn btn-primary mb-2" @click="addTask">Aggiungi</button>
                 </div>
             </header>
             <main>
-                <ul class="list-group" v-if="todoList.length > 0">
+                <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between bg-body-secondary m-1 rounded-2"
                         v-for="(task,index) in todoList" :key="index" @click="task.done =!task.done">
-                        <span :class="{'done' : task.done}">{{task}}</span>
+                        <span :class="{'done' : task.done}">{{task.text}}</span>
                         <i class="fa-solid fa-trash-can" @click="removeTask(index)"></i>
                     </li>
                 </ul>
-                <div v-else class="text-center mt-4">
+                <!-- <div v-else class="text-center mt-4">
                     <span class="border rounded-2 p-2 text-bg-success">Bravo non hai piu task da completare!</span>
-                </div>
+                </div> -->
             </main>
         </div>
 

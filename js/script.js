@@ -8,7 +8,7 @@ createApp({
         return {
             apiUrl: 'server.php',
             todoList: [],
-            addTask: '',
+            newTask: '',
 
         }
     },
@@ -28,36 +28,29 @@ createApp({
 
                 });
         },
-        // removeTask(index) {
-        //     this.tasks.splice(index, 1)
-        // },
-        // addNewTask(index) {
-        //     const data = new FormData()
-        //     data.append('task', this.addTask)
+        addTask() {
 
-        //     axios.post(this.apiUrl, data)
-        //         .then((response) => {
-        //             console.log(response.data);
-        //             this.todoList = response.data;
-        //         })
-        //         .catch((error) => {
-        //             console.log(error);
-        //         });
-        // }
+            if (this.newTask == "") {
+                return
+            }
+            console.log(this.newTask)
+            const dataTask = new FormData();
+            dataTask.append("text", this.newTask);
+
+            axios.post(this.apiUrl, dataTask)
+                .then((response) => {
+                    console.log(response.data);
+                    this.todoList = response.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+
 
     },
     mounted() {
         this.readList();
+
     }
 }).mount('#app');
-
-// addTask() {
-//     this.lastId++
-//     const upperCaseText = this.addTextTask.charAt(0).toUpperCase() + this.addTextTask.slice(1).toLowerCase()
-//     const newTask = {
-//         text: upperCaseText,
-//         done: false
-//     }
-//     this.tasks.unshift(newTask)
-//     this.addTextTask = ''
-// }

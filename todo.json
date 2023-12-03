@@ -1,18 +1,1 @@
-[
-    {
-        "text": "Fare la spesa",
-        "done": false
-    },
-    {
-        "text": "Fare la spesa",
-        "done": false
-    },
-    {
-        "text": "Fare la spesa",
-        "done": false
-    },
-    {
-        "text": "Fare la spesa",
-        "done": false
-    }
-]
+[{"text":"Fare la spesa","done":false},{"text":"Cucinare ","done":false},{"text":"Sistemare casa","done":false},{"text":"Lavare i piatti","done":false},{"text":"andare in palestra","done":false}]
